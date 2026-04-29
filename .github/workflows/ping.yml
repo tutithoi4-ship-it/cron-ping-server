@@ -1,0 +1,15 @@
+name: Keep Server Alive
+on:
+  schedule:
+    # Chạy mỗi 2 phút (GitHub Actions có thể trễ hơn một chút tùy server)
+    - cron: '*/2 * * * *'
+  workflow_dispatch: # Cho phép nhấn chạy thủ công để test
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Server
+        run: |
+          curl -I https://automation-page-a2931.web.app
+          echo "Đã ping server lúc $(date)"
