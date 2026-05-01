@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: Ping Server
         run: |
-          curl -I https://automation-page-a2931.web.app
+          curl -I https://lamlaiauto.web.app
           echo "Đã ping server lúc $(date)" 
